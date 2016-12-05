@@ -1,0 +1,18 @@
+--- origsrc/indicator-application-12.10.0.1/src/Makefile.am	2012-09-01 01:15:55.000000000 -0500
++++ src/indicator-application-12.10.0.1/src/Makefile.am	2016-12-01 18:26:42.220846700 -0600
+@@ -20,14 +20,11 @@ libapplication_la_SOURCES = \
+ libapplication_la_CFLAGS = $(INDICATOR_CFLAGS) \
+ 	$(COVERAGE_CFLAGS) \
+ 	-Wall \
+-	-Wl,-Bsymbolic-functions \
+-	-Wl,-z,defs \
+-	-Wl,--as-needed \
+ 	-Werror \
+ 	-DG_LOG_DOMAIN=\"Indicator-Application\"
+ libapplication_la_LIBADD = $(INDICATOR_LIBS) 
+ libapplication_la_LDFLAGS = $(COVERAGE_LDFLAGS) \
+-	-module -avoid-version
++	-module -avoid-version -no-undefined
+ 
+ ##################################
+ # Service
